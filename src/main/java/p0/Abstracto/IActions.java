@@ -1,5 +1,9 @@
 package p0.Abstracto;
 
+import p0.data.Actions;
+
+import java.util.List;
+
 public interface IActions {
     public void doFeed();
     public void doCleanIt();
@@ -9,5 +13,6 @@ public interface IActions {
     public void doSex();
     public void doDie();
     public void doSleep();
-    public String render(RenderType renderType);
+    public String doRender(RenderType renderType);
+    public List<Actions> getCurrentActions();
 }

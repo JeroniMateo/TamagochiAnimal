@@ -1,8 +1,14 @@
 package p0.Abstracto;
 
+import org.apache.commons.lang3.StringUtils;
+import p0.data.Actions;
+import p0.data.Status;
+
+import java.util.List;
+
 public class Tamagochi extends LifeBeing implements IActions {
     private TamaType tamaType;
-
+private Status status;
     public Tamagochi(TamaType tamaType) {
         this.tamaType = tamaType;
     }
@@ -21,6 +27,9 @@ public class Tamagochi extends LifeBeing implements IActions {
 
     public void setStatus(Status status) {
         this.status = status;
+    }
+    public List<Actions> getCurrentActions() {
+        if (status.getCurrentActions().equals(Actions.PLAY));
     }
 
     @Override
@@ -64,7 +73,27 @@ public class Tamagochi extends LifeBeing implements IActions {
     }
 
     @Override
-    public String render(RenderType renderType) {
+    public String doRender(RenderType renderType) {
+        String rtn = StringUtils.EMPTY;
+        switch (renderType){
+            case CONSOLE:
+                System.out.println(String.format("Tamagochi: %s","Pepito"));
+                break;
+            case HTML:
+                rtn = String.format("<div>%s</div>","Pepito");
+                break;
+            case JSON:
+                rtn = String.format("Tamagochi:","Pepito");
+                break;
+            default:
+                //rtn = JSONObject.toJSONString();
+                break;
+        }
+        return rtn;
+    }
+
+    @Override
+    public List<Actions> getCurrentActions() {
         return null;
     }
 }
