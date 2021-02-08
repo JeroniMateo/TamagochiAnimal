@@ -7,29 +7,20 @@ public class Tamagochi extends LifeBeing implements IActions {
         this.tamaType = tamaType;
     }
 
-    @Override
-    public void feed() {
-
+    public TamaType getTamaType() {
+        return tamaType;
     }
 
-    @Override
-    public void cleanIt() {
-
+    public void setTamaType(TamaType tamaType) {
+        this.tamaType = tamaType;
     }
 
-    @Override
-    public void walk() {
-
+    public Status getStatus() {
+        return status;
     }
 
-    @Override
-    public void play() {
-
-    }
-
-    @Override
-    public void illness() {
-
+    public void setStatus(Status status) {
+        this.status = status;
     }
 
     @Override
@@ -69,16 +60,6 @@ public class Tamagochi extends LifeBeing implements IActions {
 
     @Override
     public void doSleep() {
-
-    }
-
-    @Override
-    public void die() {
-
-    }
-
-    @Override
-    public void sleep() {
 
     }
 
