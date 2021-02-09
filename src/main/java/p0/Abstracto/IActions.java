@@ -10,4 +10,5 @@ public interface IActions {
     public void doDie();
     public void doSleep();
     public String render(RenderType renderType);
+    h
 }
