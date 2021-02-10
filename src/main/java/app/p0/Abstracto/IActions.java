@@ -1,4 +1,4 @@
-package p0.Abstracto;
+package app.p0.Abstracto;
 
 public interface IActions {
     public void doFeed();
@@ -10,5 +10,4 @@ public interface IActions {
     public void doDie();
     public void doSleep();
     public String render(RenderType renderType);
-    h
 }

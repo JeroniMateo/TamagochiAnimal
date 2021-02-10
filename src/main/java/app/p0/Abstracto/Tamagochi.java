@@ -1,17 +1,14 @@
-package p0.data;
+package app.p0.Abstracto;
 
-import p0.Abstracto.IActions;
-import p0.Abstracto.RenderType;
-import p0.Abstracto.Tamagochi;
+public class Tamagochi extends LifeBeing implements IActions {
+    private TamaType tamaType;
 
-public class Status extends LiveBeing implements IActions {
-
-
-
+    public Tamagochi(TamaType tamaType) {
+        this.tamaType = tamaType;
+    }
 
     @Override
     public void doFeed() {
-
     }
 
     @Override
