@@ -1,5 +1,4 @@
 package p0.Abstracto;
 
 public enum RenderType {
-    CONSOLE, JSON, HTML
-}
+    CONSOLE, JSON, HTM

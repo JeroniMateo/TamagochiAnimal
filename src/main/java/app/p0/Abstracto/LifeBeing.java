@@ -1,4 +1,4 @@
-package p0.Abstracto;
+package app.p0.Abstracto;
 
 import java.util.Date;
 
