@@ -43,6 +43,7 @@ public class TamagochiController {
     }
     */
 
+
     @RequestMapping(value = "/rest/do/{action}",method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public String doAction(@PathVariable String action) {
         return action;
