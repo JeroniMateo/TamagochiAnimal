@@ -1,4 +1,6 @@
-package app.p0.Abstracto;
+package app.p0.data;
+
+import app.p0.data.IActions;
 
 import java.util.Date;
 
