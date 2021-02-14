@@ -1,12 +1,39 @@
 package app.p0.data;
 
-import app.p0.Abstracto.IActions;
-import app.p0.Abstracto.RenderType;
+public class Status extends LiveBeing{
+private Integer points;
+private Integer initialPoints;
+private Integer lvl;
 
-public class Status extends LiveBeing implements IActions {
+    public Integer getPoints() {
+        return points;
+    }
 
+    public void setPoints(Integer points) {
+        this.points = points;
+    }
 
+    public Integer getInitialPoints() {
+        return initialPoints;
+    }
 
+    public void setInitialPoints(Integer initialPoints) {
+        this.initialPoints = initialPoints;
+    }
+
+    public Integer getLvl() {
+        return lvl;
+    }
+
+    public void setLvl(Integer lvl) {
+        this.lvl = lvl;
+    }
+
+    public Status(Integer points, Integer initialPoints, Integer lvl) {
+        this.points = points;
+        this.initialPoints = initialPoints;
+        this.lvl = lvl;
+    }
 
     @Override
     public void doFeed() {

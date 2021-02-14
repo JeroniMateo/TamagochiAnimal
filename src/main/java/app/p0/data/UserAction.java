@@ -1,9 +1,24 @@
 package app.p0.data;
 
+import java.lang.reflect.Type;
+
 public class UserAction {
     private String username;
     private Integer startPoints;
     private Integer points;
+    private Type tamagochi;
+
+    public UserAction(Integer startPoints, Type tamagochi) {
+        this.startPoints = startPoints;
+        this.tamagochi = tamagochi;
+    }
+    public Type getTamagochi() {
+        return tamagochi;
+    }
+
+    public void setTamagochi(Type tamagochi) {
+        this.tamagochi = tamagochi;
+    }
 
     public String getUsername() {
         return username;

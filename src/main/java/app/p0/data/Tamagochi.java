@@ -1,11 +1,8 @@
-package app.p0.Abstracto;
+package app.p0.data;
 
 public class Tamagochi extends LifeBeing implements IActions {
     private TamaType tamaType;
 
-    public Tamagochi(TamaType tamaType) {
-        this.tamaType = tamaType;
-    }
 
     @Override
     public void doFeed() {
