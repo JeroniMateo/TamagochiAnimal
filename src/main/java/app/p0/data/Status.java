@@ -1,16 +1,43 @@
 package app.p0.data;
 
+public class Status extends LifeBeing{
+private Integer points;
+private Integer initialPoints;
+private Integer lvl;
+private String happy;
+private String normal;
+private String illness;
+private String dead;
+//Implementar el status con un atributos o implementar el estado con enums???'
+    public Integer getPoints() {
+        return points;
+    }
 
-import app.p0.Abstracto.IActions;
+    public void setPoints(Integer points) {
+        this.points = points;
+    }
 
+    public Integer getInitialPoints() {
+        return initialPoints;
+    }
 
-import java.util.List;
+    public void setInitialPoints(Integer initialPoints) {
+        this.initialPoints = initialPoints;
+    }
 
+    public Integer getLvl() {
+        return lvl;
+    }
 
-public class Status extends LiveBeing implements IActions {
+    public void setLvl(Integer lvl) {
+        this.lvl = lvl;
+    }
 
-
-
+    public Status(Integer points, Integer initialPoints, Integer lvl) {
+        this.points = points;
+        this.initialPoints = initialPoints;
+        this.lvl = lvl;
+    }
 
     @Override
     public void doFeed() {
@@ -53,14 +80,17 @@ public class Status extends LiveBeing implements IActions {
     }
 
     @Override
-    public String doRender(app.p0.Abstracto.RenderType renderType) {
+    public String render(RenderType renderType) {
         return null;
     }
 
     @Override
-    public List<Actions> getCurrentActions() {
-        return null;
+    public void doRender(RenderType renderType) {
+
     }
 
+    @Override
+    public void getCurrentActions() {
 
+    }
 }
