@@ -1,10 +1,14 @@
 package app.p0.data;
 
-public class Status extends LiveBeing{
+public class Status extends LifeBeing{
 private Integer points;
 private Integer initialPoints;
 private Integer lvl;
-
+private String happy;
+private String normal;
+private String illness;
+private String dead;
+//Implementar el status con un atributos o implementar el estado con enums???'
     public Integer getPoints() {
         return points;
     }
@@ -78,5 +82,15 @@ private Integer lvl;
     @Override
     public String render(RenderType renderType) {
         return null;
+    }
+
+    @Override
+    public void doRender(RenderType renderType) {
+
+    }
+
+    @Override
+    public void getCurrentActions() {
+
     }
 }

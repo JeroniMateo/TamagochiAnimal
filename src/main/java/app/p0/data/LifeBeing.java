@@ -4,7 +4,7 @@ import app.p0.data.IActions;
 
 import java.util.Date;
 
-public abstract class LifeBeing implements IActions {
+public abstract class LifeBeing implements IActions,IRender {
     private String soulKind;
     private Integer age;
     private Date bornDate;
@@ -35,4 +35,6 @@ public abstract class LifeBeing implements IActions {
     public void setBornDate(Date bornDate) {
         this.bornDate = bornDate;
     }
+
+    public abstract void getCurrentActions();
 }

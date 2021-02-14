@@ -47,4 +47,14 @@ public class Tamagochi extends LifeBeing implements IActions {
     public String render(RenderType renderType) {
         return null;
     }
+
+    @Override
+    public void getCurrentActions() {
+
+    }
+
+    @Override
+    public void doRender(RenderType renderType) {
+
+    }
 }
