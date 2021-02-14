@@ -44,6 +44,7 @@ Como podemos ver tenemos un parametro que se llama action, si cambiamos la accio
 */
 
 
+
     @RequestMapping(value = "/rest/do/{action}",method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public String doAction(@PathVariable String action) {
         return action;
