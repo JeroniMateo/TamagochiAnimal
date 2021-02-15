@@ -8,7 +8,7 @@ import app.p0.data.Actions;
 import java.util.List;
 
 public class Tamagochi extends LifeBeing implements IActions {
-    private TamaType tamaType;
+    private TamaGender tamaGender;
 
     public Tamagochi(TamaType tamaType) {
         this.tamaType = tamaType;
