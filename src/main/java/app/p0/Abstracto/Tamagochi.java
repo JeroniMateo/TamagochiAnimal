@@ -1,5 +1,12 @@
 package p0.Abstracto;
 
+import app.p0.Abstracto.IActions;
+import app.p0.Abstracto.LifeBeing;
+import app.p0.Abstracto.TamaType;
+import app.p0.data.Actions;
+
+import java.util.List;
+
 public class Tamagochi extends LifeBeing implements IActions {
     private TamaType tamaType;
 
@@ -7,30 +14,6 @@ public class Tamagochi extends LifeBeing implements IActions {
         this.tamaType = tamaType;
     }
 
-    @Override
-    public void feed() {
-
-    }
-
-    @Override
-    public void cleanIt() {
-
-    }
-
-    @Override
-    public void walk() {
-
-    }
-
-    @Override
-    public void play() {
-
-    }
-
-    @Override
-    public void illness() {
-
-    }
 
     @Override
     public void doFeed() {
@@ -73,17 +56,13 @@ public class Tamagochi extends LifeBeing implements IActions {
     }
 
     @Override
-    public void die() {
-
+    public String doRender(app.p0.Abstracto.RenderType renderType) {
+        return null;
     }
 
     @Override
-    public void sleep() {
-
-    }
-
-    @Override
-    public String render(RenderType renderType) {
+    public List<Actions> getCurrentActions() {
         return null;
     }
 }
+

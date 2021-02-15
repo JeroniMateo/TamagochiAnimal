@@ -1,8 +1,11 @@
-package p0.data;
+package app.p0.data;
 
-import p0.Abstracto.IActions;
-import p0.Abstracto.RenderType;
-import p0.Abstracto.Tamagochi;
+
+import app.p0.Abstracto.IActions;
+
+
+import java.util.List;
+
 
 public class Status extends LiveBeing implements IActions {
 
@@ -50,7 +53,14 @@ public class Status extends LiveBeing implements IActions {
     }
 
     @Override
-    public String render(RenderType renderType) {
+    public String doRender(app.p0.Abstracto.RenderType renderType) {
         return null;
     }
+
+    @Override
+    public List<Actions> getCurrentActions() {
+        return null;
+    }
+
+
 }
