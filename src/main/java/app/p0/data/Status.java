@@ -1,5 +1,8 @@
 package app.p0.data;
 
+
+/*TODO Genera una clase Status. El status es el estado del LifeBeing, puedes anotar
+tantos detalles como quieras, o simplemente un número de puntos. */
 public class Status extends LifeBeing{
 private Integer points;
 private Integer initialPoints;
@@ -82,6 +85,11 @@ private String dead;
     @Override
     public String render(RenderType renderType) {
         return null;
+    }
+
+    @Override
+    public void getCurrentActions(Actions actions) {
+
     }
 
     @Override
