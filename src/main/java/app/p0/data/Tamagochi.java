@@ -1,23 +1,14 @@
-package p0.Abstracto;
-
-import app.p0.Abstracto.IActions;
-import app.p0.Abstracto.LifeBeing;
-import app.p0.Abstracto.TamaType;
-import app.p0.data.Actions;
-
-import java.util.List;
+package app.p0.data;
+/*TODO Genera una clase que implemente LifeBeing y contenga un status en su
+interior además de los atributos necesarios. Esta clase gestionará, según las
+acciones y en el estado en el que está el número de acciones posibles.*/
 
 public class Tamagochi extends LifeBeing implements IActions {
     private TamaGender tamaGender;
 
-    public Tamagochi(TamaType tamaType) {
-        this.tamaType = tamaType;
-    }
-
 
     @Override
     public void doFeed() {
-
     }
 
     @Override
@@ -56,13 +47,13 @@ public class Tamagochi extends LifeBeing implements IActions {
     }
 
     @Override
-    public String doRender(app.p0.Abstracto.RenderType renderType) {
+    public String render(RenderType renderType) {
         return null;
     }
 
     @Override
-    public List<Actions> getCurrentActions() {
-        return null;
+    public void getCurrentActions(Actions actions) {
+
     }
 
     @Override
@@ -75,4 +66,3 @@ public class Tamagochi extends LifeBeing implements IActions {
 
     }
 }
-
