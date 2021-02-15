@@ -10,5 +10,8 @@ public interface IActions {
     public void doDie();
     public void doSleep();
     public String render(RenderType renderType);
-    public default void getCurrentActions(IActions actions){}
+
+    public default void getCurrentActions(IActions actions) {
+
+    }
 }

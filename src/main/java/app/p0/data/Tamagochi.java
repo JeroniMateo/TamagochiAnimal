@@ -1,7 +1,7 @@
 package app.p0.data;
 
 public class Tamagochi extends LifeBeing implements IActions {
-    private TamaType tamaType;
+    private TamaGender tamaGender;
 
 
     @Override
