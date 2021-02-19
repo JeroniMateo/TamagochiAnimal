@@ -1,14 +1,15 @@
 package app.Controller;
 
+import app.p0.data.*;
+import app.service.GameService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
+import javax.swing.*;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.ErrorManager;
 
 @RestController
@@ -18,7 +19,7 @@ public class TamagochiController {
     /**
      * Check it works perfectly
      *
-     * @param uuid
+     * @param
      * @rel Logg = LoggerFactory.getLogger(this.getClass());
      * /*
      */
@@ -30,8 +31,8 @@ public class TamagochiController {
     * SET: es una "bolsa" que puede haber objetos duplicados.
     * */
  /*
-    @RequestMapping(value = "/rest/do/{IActions}",method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<List<RegisterItem>> getRegisterById(@PathVariable IActions uiid) {
+    @RequestMapping(value = "/rest/do/{uiid}",method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<List<RegisterItem>> getRegisterById(@PathVariable Actions uiid) {
         try {
             return new ResponseEntity<>(analysisService.getDataRegisterById(uuid), HttpStatus.OK);
         } catch (Exception e) {
@@ -44,25 +45,45 @@ Como podemos ver tenemos un parametro que se llama action, si cambiamos la accio
 */
 
 
-
+/*Nos devuelve el do action de gameService */
     @RequestMapping(value = "/rest/do/{action}",method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-    public String doAction(@PathVariable String action) {
-        return action;
+    public LifeBeing doAction(@PathVariable Actions action) {
+        return GameService.doAction(action);
     }
 
     @RequestMapping(value = "/rest/getCurrentStatus",method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-    public String getCurrentStatus() {
-        return "me siento bien, gracias";
+    public Status getCurrentStatus() {
+        return GameService.getStatus();
     }
 
-
-   @RequestMapping(value = "/rest/getCurrentStatus")
-
     @RequestMapping(value = "/rest/getStats")
+    public List<UserAction> getStats() {
+        return GameService.getUserActions();
+    }
 
-    @RequestMapping(value = "/rest/render/{mode}")
+    @RequestMapping(value = "/rest/render/{renderType}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    public String render(@PathVariable RenderType renderType) {
+        return GameService.render(renderType);
+    }
 
+    //Crearemos un nuevo lifebeing
     @RequestMapping(value = "/rest/new")
+    public LifeBeing newLifeBeing() {
+        return GameService.newLifeBeing();
+    }
 
-    @RequestMapping(value = "/rest/getActions")
-*/}
+    @RequestMapping(value = "/rest/reset")
+    public LifeBeing resetLifeBeing() {
+        return GameService.resetLifeBeing();
+    }
+
+    @GetMapping("/getUserActions")
+    public List<UserAction> getUserActions() {
+        return GameService.getUserActions();
+    }
+
+    @GetMapping("/getActions")
+    public Actions[] getActions() {
+        return GameService.getActions();
+    }
+}

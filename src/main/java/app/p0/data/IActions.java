@@ -9,6 +9,7 @@ public interface IActions {
     public void doSex();
     public void doDie();
     public void doSleep();
-    public String render(RenderType renderType);
-    public void getCurrentActions(Actions actions);
+    public void doPoop();
+    //array de Actions tmb podría ser un String o un Listado....
+    public Actions[]  getCurrentActions();
 }
