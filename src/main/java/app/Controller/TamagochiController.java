@@ -21,28 +21,10 @@ public class TamagochiController {
      *
      * @param
      * @rel Logg = LoggerFactory.getLogger(this.getClass());
+     * https://www.codejava.net/frameworks/spring-boot/spring-boot-hello-world-restful-web-services-tutorial GUIA DEFINITIVA
      * /*
      */
-    /*  RequestMapping localhost/get/yelmetodo lo que hará este request mapping es coger el metodo
-    * y devolvernos los datos.
-    * List: Tiene elementos unicos. ArrayList: Una lista de elementos.
-    * LinkedList: Es una lista que apunta a su elemento anterior y posterior.
-    * OrderedList: Una lista ordenada.
-    * SET: es una "bolsa" que puede haber objetos duplicados.
-    * */
- /*
-    @RequestMapping(value = "/rest/do/{uiid}",method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<List<RegisterItem>> getRegisterById(@PathVariable Actions uiid) {
-        try {
-            return new ResponseEntity<>(analysisService.getDataRegisterById(uuid), HttpStatus.OK);
-        } catch (Exception e) {
-            log.error("register:get/", e);
-            return new ResponseEntity<>(new ArrayList<>(), HttpStatus.INTERNAL_SERVER_ERROR);
-        }
-    }
-    Para entender mejor el restController:
-Como podemos ver tenemos un parametro que se llama action, si cambiamos la accion, cambiará, además se le pasa un render json
-*/
+
 
 
 /*Nos devuelve el do action de gameService */
