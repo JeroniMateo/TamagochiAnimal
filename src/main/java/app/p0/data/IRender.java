@@ -1,7 +1,8 @@
 package app.p0.data;
-/*TODO Genera una interfaz IRender. Esta interfaz tendrá un método
-doRender(Rendertype). */
+/*Genera una interfaz IRender. Esta interfaz tendrá un método
+* doRender(Rendertype).
+* Igual que en el ejercicio que hizo alberto */
 
 public interface IRender {
-    public void doRender(RenderType renderType);
+    public String doRender(RenderType renderType);
 }

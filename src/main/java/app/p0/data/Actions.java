@@ -1,7 +1,7 @@
 package app.p0.data;
 
-/*TODO Genera un enum Actions. Serán las acciones que permites que se hagan
+/*Genera un enum Actions. Serán las acciones que permites que se hagan
 durante el juego.*/
 public enum Actions {
-FEED, CLEAN, WALK, PLAY, ILLNESS, SEX, DIE, SLEEP
+FEED, CLEAN, WALK, PLAY, ILLNESS, SEX, DIE, SLEEP, POOP
 }

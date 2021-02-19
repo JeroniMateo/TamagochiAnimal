@@ -1,68 +1,72 @@
 package app.p0.data;
-/*TODO Genera una clase que implemente LifeBeing y contenga un status en su
+
+/*Genera una clase que implemente LifeBeing y contenga un status en su
 interior además de los atributos necesarios. Esta clase gestionará, según las
 acciones y en el estado en el que está el número de acciones posibles.*/
 
 public class Tamagochi extends LifeBeing implements IActions {
     private TamaGender tamaGender;
 
+    public TamaGender getTamaGender() {
+        return tamaGender;
+    }
 
-    @Override
+    public void setTamaGender(TamaGender tamaGender) {
+        this.tamaGender = tamaGender;
+    }
+
+    public Tamagochi() {
+        /*Probabilidad en el enum para el genero
+        https://www.lawebdelprogramador.com/foros/Java/1199856-Programa-de-probabilidad-de-java.html
+        50% de probabilidades de que nuestro Tamagochi sea macho o Female...
+         */
+
+        if (Math.random()<0.5){
+            this.tamaGender=TamaGender.FEMALE;
+        }else
+            this.tamaGender= TamaGender.MALE;
+    }
+
     public void doFeed() {
+        getStatus().operarPuntos(20);
     }
 
-    @Override
     public void doCleanIt() {
-
+        getStatus().operarPuntos(10);
     }
 
-    @Override
     public void doWalk() {
-
+        getStatus().operarPuntos(10);
     }
 
-    @Override
     public void doPlay() {
-
+        getStatus().operarPuntos(10);
     }
 
-    @Override
     public void doIllness() {
-
+        getStatus().operarPuntos(-50);
     }
 
-    @Override
     public void doSex() {
-
+        getStatus().operarPuntos(100);
     }
 
-    @Override
     public void doDie() {
-
+        getStatus().operarPuntos(-100);
     }
 
-    @Override
+
     public void doSleep() {
-
+        getStatus().operarPuntos(10);
     }
 
-    @Override
-    public String render(RenderType renderType) {
-        return null;
+    public void doPoop() {
+        getStatus().operarPuntos(-30);
     }
 
-    @Override
-    public void getCurrentActions(Actions actions) {
-
+    //nos devolverá todas las acciones en un array!
+    public Actions[] getCurrentActions() {
+        return Actions.values();
     }
 
-    @Override
-    public void getCurrentActions() {
-
-    }
-
-    @Override
-    public void doRender(RenderType renderType) {
-
-    }
 }
