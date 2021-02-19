@@ -22,7 +22,7 @@ public class TamagochiController {
      * @param
      * @rel Logg = LoggerFactory.getLogger(this.getClass());
      * https://www.codejava.net/frameworks/spring-boot/spring-boot-hello-world-restful-web-services-tutorial GUIA DEFINITIVA
-     * /*
+     * tacata
      */
 
 
