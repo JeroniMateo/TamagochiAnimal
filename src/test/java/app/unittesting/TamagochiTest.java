@@ -43,7 +43,7 @@ public class TamagochiTest {
     }
     //revisar test
 
-    //random name //https://www.baeldung.com/java-random-string Falta conseguir que no se cambie el nombre cuando le de la gana!!!!
+    //random name //https://www.baeldung.com/java-random-string
     @Test
     public void givenUsingApache_whenGeneratingRandomAlphabeticString_thenCorrect() {
         String generatedString = RandomStringUtils.randomAlphabetic(10);
@@ -51,9 +51,6 @@ public class TamagochiTest {
     }
 
     //TODO Realizar test de limitar puntuación por ejemplo: si llega a 100, que no sume más!
-    @Test
-    public void limitPoints(LifeBeing prueba) {
-    }
     //TODO Realizar test de vida hasta 0 y ver si esta muerto o no.
 
     //todo Comprobar la resurrección del tamagochi Con new ya se revive pero hay que hacer mas!

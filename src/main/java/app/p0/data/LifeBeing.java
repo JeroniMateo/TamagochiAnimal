@@ -18,7 +18,7 @@ public abstract class LifeBeing implements IActions, IRender {
     private Status status;
 
 
-    //Constructor que te da un nuevo status y nueva fecha de nacimiento del LifeBeing
+    //Constructor que te da un nuevo status y nueva fecha de nacimiento del LifeBeing Y UN NOMBRE RANDOM DE LETRAS (nunca será bonito :( )
     public LifeBeing() {
         status = new Status();
         bornDate = new Date();
