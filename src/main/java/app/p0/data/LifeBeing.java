@@ -1,6 +1,5 @@
 package app.p0.data;
 
-import app.p0.data.IActions;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.commons.lang3.StringUtils;
 
@@ -23,7 +22,7 @@ public abstract class LifeBeing implements IActions, IRender {
     public LifeBeing() {
         status = new Status();
         bornDate = new Date();
-        name=getName();
+        name=RandomStringUtils.randomAlphabetic(6);
     }
 
     public Status getStatus() {
@@ -35,9 +34,7 @@ public abstract class LifeBeing implements IActions, IRender {
     }
 
 
-//TODO generamos un nombre aleatorio FALTA QUE NO SE REPITA SI SIGUE VIVO!!!!
     public String getName() {
-        name = RandomStringUtils.randomAlphabetic(6);
         return name;
     }
 
