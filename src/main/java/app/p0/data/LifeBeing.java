@@ -22,7 +22,7 @@ public abstract class LifeBeing implements IActions, IRender {
     public LifeBeing() {
         status = new Status();
         bornDate = new Date();
-        name=RandomStringUtils.randomAlphabetic(6);
+      name=RandomStringUtils.randomAlphabetic(6);
     }
 
     public Status getStatus() {
@@ -42,8 +42,6 @@ public abstract class LifeBeing implements IActions, IRender {
     public void setName(String name) {
         this.name = name;
     }
-
-
 
     public Date getBornDate() {
         return bornDate;
@@ -101,7 +99,7 @@ public abstract class LifeBeing implements IActions, IRender {
                                 "Name: " + getName()));
                 break;
             case HTML:
-                rtn= String.format("<html>" +
+                rtn= String.format("<!DOCTYPE html>" +
                         "<body>" +
                         "<p>Name:" + getName() + "</p>" +
                         "<p>Points:" + status.getPoints() + "</p>" +

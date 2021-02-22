@@ -4,7 +4,7 @@ package app.p0.data;
 /*Genera una clase Status. El status es el estado del LifeBeing, puedes anotar
 tantos detalles como quieras, o simplemente un número de puntos. */
 public class Status {
-    //le aplicamos el numero de puntos. En este caso el tamagochi empezará con 50 Integer points!
+
     private Integer points;
     private boolean dead = false;
 

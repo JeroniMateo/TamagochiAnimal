@@ -16,7 +16,7 @@ public class GameService{
     public static final Integer MAX_POINTS = 100;
 
     /*Contendrá un atributo único denominado maxPoints. */
-//TODO MAXPOINTS es constante! Tendrá siempre el valor de 100! Darle vueltas! PROBARLO EN TEST PRIMERO!!!!
+//MAXPOINTS es constante! Tendrá siempre el valor de 100! Darle vueltas! PROBARLO EN TEST PRIMERO!!!!
 
 
     /* Contendrá un atributo único denominado currentLifeBeing, que será la
@@ -85,8 +85,8 @@ public class GameService{
         return currentLifeBeing;
     }
 
-    /*TODO resetLifeBeing(…): reiniciará el lifeBeing. No modifica las acciones
-    realizadas ya que es una nueva accion. Reiniciar reinicia pero creo que falta chicha!? Probarlo en test!!!!!*/
+    /*resetLifeBeing(…): reiniciará el lifeBeing. No modifica las acciones
+    realizadas ya que es una nueva accion.*/
     //
     public static LifeBeing resetLifeBeing(){
             currentLifeBeing = new Tamagochi();

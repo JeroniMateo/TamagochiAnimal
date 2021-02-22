@@ -21,7 +21,11 @@ public class TamagochiController {
      */
 
 
-
+    //Crearemos un nuevo lifebeing
+    @RequestMapping(value = "/rest/new")
+    public LifeBeing newLifeBeing() {
+        return GameService.newLifeBeing();
+    }
 /*Nos devuelve el do action de gameService */
     @RequestMapping(value = "/rest/do/{action}",method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public LifeBeing doAction(@PathVariable Actions action) {
@@ -43,11 +47,7 @@ public class TamagochiController {
         return GameService.render(renderType);
     }
 
-    //Crearemos un nuevo lifebeing
-    @RequestMapping(value = "/rest/new")
-    public LifeBeing newLifeBeing() {
-        return GameService.newLifeBeing();
-    }
+
 
     @RequestMapping(value = "/rest/reset")
     public LifeBeing resetLifeBeing() {
