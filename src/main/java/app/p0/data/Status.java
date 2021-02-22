@@ -17,7 +17,7 @@ public class Status {
         this.points = points;
     }
 
-    //Aquí se sumarán o se restarán los puntos con el metodo operarPuntos
+    //Aquí se sumarán o se restarán los puntos con el metodo operarPuntos .
     public void operarPuntos(Integer add) {
         this.points += add;
         if (this.points <= 0 ) {
