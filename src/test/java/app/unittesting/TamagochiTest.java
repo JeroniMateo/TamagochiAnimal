@@ -35,7 +35,7 @@ public class TamagochiTest {
         Assert.notNull(actions, "Accion Incorrecta");
 
     }
-    //revisar test
+    //revisar
 
     //random name //https://www.baeldung.com/java-random-string
     @Test
