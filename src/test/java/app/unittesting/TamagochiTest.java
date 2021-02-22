@@ -1,19 +1,13 @@
 package app.unittesting;
 
 import app.p0.data.Actions;
-import app.p0.data.LifeBeing;
-import app.p0.data.Tamagochi;
 import app.service.GameService;
 import org.apache.commons.lang3.RandomStringUtils;
-import org.apache.commons.lang3.StringUtils;
 import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.boot.SpringBootConfiguration;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.util.Assert;
-
-import java.util.Random;
 
 
 @SpringBootTest

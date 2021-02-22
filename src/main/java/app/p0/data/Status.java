@@ -24,7 +24,9 @@ public class Status {
             points = 0;
             dead = true;
         }
-        if (this.points >= 100) points = 100;
+        if (this.points >= 100){
+            points = 100;
+        }
     }
 
     public boolean isDead(){

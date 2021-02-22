@@ -2,15 +2,10 @@ package app.Controller;
 
 import app.p0.data.*;
 import app.service.GameService;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import javax.swing.*;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.ErrorManager;
 
 @RestController
 public class TamagochiController {

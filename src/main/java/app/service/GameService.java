@@ -38,7 +38,7 @@ public class GameService{
     public static LifeBeing doAction(Actions action){
         UserAction ua = new UserAction();
         //Status s = currentLifeBeing.getStatus();
-        //s.getPoints(); es lo mismo que linea 44
+        //s.getPoints(); es lo mismo que linea 42
         ua.setInitialPoints(currentLifeBeing.getStatus().getPoints());
         if (!getStatus().isDead()){
             if (Actions.CLEAN.equals(action)) {
