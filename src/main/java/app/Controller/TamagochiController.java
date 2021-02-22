@@ -1,64 +1,66 @@
 package app.Controller;
 
+import app.p0.data.*;
+import app.service.GameService;
 import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 public class TamagochiController {
+
+
     /**
      * Check it works perfectly
      *
-     * @param uuid
+     * @param
      * @rel Logg = LoggerFactory.getLogger(this.getClass());
-     * /*
+     * https://www.codejava.net/frameworks/spring-boot/spring-boot-hello-world-restful-web-services-tutorial GUIA DEFINITIVA
+     * tacata
      */
-    /*  RequestMapping localhost/get/yelmetodo lo que hará este request mapping es coger el metodo
-    * y devolvernos los datos.
-    * List: Tiene elementos unicos. ArrayList: Una lista de elementos.
-    * LinkedList: Es una lista que apunta a su elemento anterior y posterior.
-    * OrderedList: Una lista ordenada.
-    * SET: es una "bolsa" que puede haber objetos duplicados.
-    * */
-   /*
-    @RequestMapping(value = "/get/{uuid}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<List<RegisterItem>> getRegisterById(@PathVariable IActions uuid) {
-        try {
-            return new ResponseEntity<>(analysisService.getDataRegisterById(uuid), HttpStatus.OK);
-        } catch (Exception e) {
-            log.error("register:get/", e);
-            return new ResponseEntity<>(new ArrayList<>(), HttpStatus.INTERNAL_SERVER_ERROR);
-        }
-    }
-    @RequestMapping(value = "/rest/do/{IActions}",method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<List<RegisterItem>> getRegisterById(@PathVariable IActions accion) {
-        try {
-            return new ResponseEntity<>(analysisService.getDataRegisterById(uuid), HttpStatus.OK);
-        } catch (Exception e) {
-            log.error("register:get/", e);
-            return new ResponseEntity<>(new ArrayList<>(), HttpStatus.INTERNAL_SERVER_ERROR);
-        }
-    }
-    */
 
+
+    //Crearemos un nuevo lifebeing
+    @RequestMapping(value = "/rest/new")
+    public LifeBeing newLifeBeing() {
+        return GameService.newLifeBeing();
+    }
+/*Nos devuelve el do action de gameService */
     @RequestMapping(value = "/rest/do/{action}",method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-    public String doAction(@PathVariable String action) {
-        return action;
+    public LifeBeing doAction(@PathVariable Actions action) {
+        return GameService.doAction(action);
     }
 
     @RequestMapping(value = "/rest/getCurrentStatus",method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-    public String getCurrentStatus() {
-        return "me siento bien, gracias";
+    public Status getCurrentStatus() {
+        return GameService.getStatus();
     }
-   /* @RequestMapping(value = "/rest/getCurrentStatus")
 
     @RequestMapping(value = "/rest/getStats")
+    public List<UserAction> getStats() {
+        return GameService.getUserActions();
+    }
 
-    @RequestMapping(value = "/rest/render/{mode}")
+    @RequestMapping(value = "/rest/render/{renderType}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    public String render(@PathVariable RenderType renderType) {
+        return GameService.render(renderType);
+    }
 
-    @RequestMapping(value = "/rest/new")
 
-    @RequestMapping(value = "/rest/getActions")
-*/}
+
+    @RequestMapping(value = "/rest/reset")
+    public LifeBeing resetLifeBeing() {
+        return GameService.resetLifeBeing();
+    }
+
+    @GetMapping("/getUserActions")
+    public List<UserAction> getUserActions() {
+        return GameService.getUserActions();
+    }
+
+    @GetMapping("/getActions")
+    public Actions[] getActions() {
+        return GameService.getActions();
+    }
+}

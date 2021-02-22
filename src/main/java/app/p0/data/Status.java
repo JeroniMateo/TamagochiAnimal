@@ -1,66 +1,36 @@
 package app.p0.data;
 
 
-import app.p0.Abstracto.IActions;
+/*Genera una clase Status. El status es el estado del LifeBeing, puedes anotar
+tantos detalles como quieras, o simplemente un número de puntos. */
+public class Status {
 
+    private Integer points;
+    private boolean dead = false;
 
-import java.util.List;
-
-
-public class Status extends LiveBeing implements IActions {
-
-
-
-
-    @Override
-    public void doFeed() {
-
+//getters y setters
+    public Integer getPoints() {
+        return points;
     }
 
-    @Override
-    public void doCleanIt() {
-
+    public void setPoints(Integer points) {
+        this.points = points;
     }
 
-    @Override
-    public void doWalk() {
-
+    //Aquí se sumarán o se restarán los puntos con el metodo operarPuntos
+    public void operarPuntos(Integer add) {
+        this.points += add;
+        if (this.points <= 0 ) {
+            points = 0;
+            dead = true;
+        }
+        if (this.points >= 100){
+            points = 100;
+        }
     }
 
-    @Override
-    public void doPlay() {
-
+    public boolean isDead(){
+        return this.dead;
     }
-
-    @Override
-    public void doIllness() {
-
-    }
-
-    @Override
-    public void doSex() {
-
-    }
-
-    @Override
-    public void doDie() {
-
-    }
-
-    @Override
-    public void doSleep() {
-
-    }
-
-    @Override
-    public String doRender(app.p0.Abstracto.RenderType renderType) {
-        return null;
-    }
-
-    @Override
-    public List<Actions> getCurrentActions() {
-        return null;
-    }
-
 
 }

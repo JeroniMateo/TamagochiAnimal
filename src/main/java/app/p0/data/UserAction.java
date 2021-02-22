@@ -1,31 +1,63 @@
 package app.p0.data;
 
+
+/*TODO Genera una clase UserAction
+Esta clase representa un registro del momento en el que se ha ejecutado la action,
+el tipo de juguete sobre el que se ha realizado, los puntos de inicio, y los puntos
+conseguidos */
+
+
+import java.util.Date;
+
 public class UserAction {
-    private String username;
-    private Integer startPoints;
-    private Integer points;
+    private Date date;
+    private LifeBeing lifeBeing;
+    private Integer initialPoints;
+    private Integer currentPoints;
+    private Actions action;
 
-    public String getUsername() {
-        return username;
+    public Actions getAction() {
+        return action;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setAction(Actions action) {
+        this.action = action;
     }
 
-    public Integer getStartPoints() {
-        return startPoints;
+    public Date getDate() {
+        return date;
     }
 
-    public void setStartPoints(Integer startPoints) {
-        startPoints = startPoints;
+    public void setDate(Date date) {
+        this.date = date;
     }
 
-    public Integer getPoints() {
-        return points;
+    public LifeBeing getLifeBeing() {
+        return lifeBeing;
     }
 
-    public void setPoints(Integer points) {
-        this.points = points;
+    public void setLifeBeing(LifeBeing lifeBeing) {
+        this.lifeBeing = lifeBeing;
+    }
+
+    public Integer getInitialPoints() {
+        return initialPoints;
+    }
+
+    public void setInitialPoints(Integer initialPoints) {
+        this.initialPoints = initialPoints;
+    }
+
+    public Integer getCurrentPoints() {
+        return currentPoints;
+    }
+
+    public void setCurrentPoints(Integer currentPoints) {
+        this.currentPoints = currentPoints;
+    }
+
+    //con Date nos dará un registro del momento en el que se ha ejecutado la acción.
+    public UserAction() {
+        date = new Date();
     }
 }

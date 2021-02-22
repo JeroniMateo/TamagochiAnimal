@@ -1,8 +1,4 @@
-package app.p0.Abstracto;
-
-import p0.data.Actions;
-
-import java.util.List;
+package app.p0.data;
 
 public interface IActions {
     public void doFeed();
@@ -13,6 +9,7 @@ public interface IActions {
     public void doSex();
     public void doDie();
     public void doSleep();
-    public String doRender(RenderType renderType);
-    public List<Actions> getCurrentActions();
+    public void doPoop();
+    //array de Actions tmb podría ser un String o un Listado....
+    public Actions[]  getCurrentActions();
 }

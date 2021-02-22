@@ -3,9 +3,10 @@ package app;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+//sin esto no arrancamos!
 @SpringBootApplication
-public class Otracosa {
+public class UnittestingApplication {
     public static void main(String[] args) {
-        SpringApplication.run(Otracosa.class, args);
+        SpringApplication.run(UnittestingApplication.class, args);
     }
 }
