@@ -12,13 +12,12 @@ public class GameService{
     //https://www.geeksforgeeks.org/abstract-classes-in-java/
         /* Contendrá un atributo único denominado UserActions que se almacenará
         como una lista de acciones de tipo UserAction.*/
-    private static List<UserAction> userActions=new ArrayList<>();
-
-
+    private static final List<UserAction> userActions=new ArrayList<>();
+    public static final Integer MAX_POINTS = 100;
 
     /*Contendrá un atributo único denominado maxPoints. */
 //TODO MAXPOINTS es constante! Tendrá siempre el valor de 100! Darle vueltas! PROBARLO EN TEST PRIMERO!!!!
-    private static final Integer maxPoints=100;
+
 
     /* Contendrá un atributo único denominado currentLifeBeing, que será la
     instancia única a la que los usuarios están interactuando*/
@@ -37,35 +36,38 @@ public class GameService{
     cambio vendrá dado por la lógica que tu consideres.*/
 
     public static LifeBeing doAction(Actions action){
-
         UserAction ua = new UserAction();
         //Status s = currentLifeBeing.getStatus();
         //s.getPoints(); es lo mismo que linea 44
         ua.setInitialPoints(currentLifeBeing.getStatus().getPoints());
-
-        if (Actions.CLEAN.equals(action)){
-            currentLifeBeing.doCleanIt();
-        }
-        if (Actions.SEX.equals(action)){
-            currentLifeBeing.doSex();
-        }
-        if (Actions.DIE.equals(action)){
-            currentLifeBeing.doDie();
-        }
-        if (Actions.POOP.equals(action)){
-            currentLifeBeing.doPoop();
-        }
-        if (Actions.SLEEP.equals(action)){
-            currentLifeBeing.doSleep();
-        }
-        if (Actions.FEED.equals(action)){
-            currentLifeBeing.doIllness();
-        }
-        if (Actions.PLAY.equals(action)){
-            currentLifeBeing.doPlay();
-        }
-        if (Actions.WALK.equals(action)){
-            currentLifeBeing.doWalk();
+        if (!getStatus().isDead()){
+            if (Actions.CLEAN.equals(action)) {
+                currentLifeBeing.doCleanIt();
+            }
+            if (Actions.SEX.equals(action)) {
+                currentLifeBeing.doSex();
+            }
+            if (Actions.DIE.equals(action)) {
+                currentLifeBeing.doDie();
+            }
+            if (Actions.POOP.equals(action)) {
+                currentLifeBeing.doPoop();
+            }
+            if (Actions.SLEEP.equals(action)) {
+                currentLifeBeing.doSleep();
+            }
+            if (Actions.ILLNESS.equals(action)) {
+                currentLifeBeing.doIllness();
+            }
+            if (Actions.PLAY.equals(action)) {
+                currentLifeBeing.doPlay();
+            }
+            if (Actions.WALK.equals(action)) {
+                currentLifeBeing.doWalk();
+            }
+            if (Actions.FEED.equals(action)) {
+                currentLifeBeing.doFeed();
+            }
         }
 
         ua.setCurrentPoints(currentLifeBeing.getStatus().getPoints());
@@ -73,11 +75,13 @@ public class GameService{
         ua.setAction(action);
 
         userActions.add(ua);
+
         return currentLifeBeing;
     }
 
     public static LifeBeing newLifeBeing(){
         currentLifeBeing = new Tamagochi();
+        currentLifeBeing.getStatus().setPoints(MAX_POINTS);
         return currentLifeBeing;
     }
 
@@ -86,6 +90,7 @@ public class GameService{
     //
     public static LifeBeing resetLifeBeing(){
             currentLifeBeing = new Tamagochi();
+            currentLifeBeing.getStatus().setPoints(MAX_POINTS);
             return currentLifeBeing;
         }
 
@@ -104,10 +109,6 @@ public class GameService{
     public static Actions[] getActions(){
         return currentLifeBeing.getCurrentActions();
     }
-
-
-
-
 
 }
 

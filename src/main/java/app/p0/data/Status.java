@@ -5,7 +5,8 @@ package app.p0.data;
 tantos detalles como quieras, o simplemente un número de puntos. */
 public class Status {
     //le aplicamos el numero de puntos. En este caso el tamagochi empezará con 50 Integer points!
-    private Integer points=50;
+    private Integer points;
+    private boolean dead = false;
 
 //getters y setters
     public Integer getPoints() {
@@ -19,6 +20,15 @@ public class Status {
     //Aquí se sumarán o se restarán los puntos con el metodo operarPuntos
     public void operarPuntos(Integer add) {
         this.points += add;
+        if (this.points <= 0 ) {
+            points = 0;
+            dead = true;
+        }
+        if (this.points >= 100) points = 100;
+    }
+
+    public boolean isDead(){
+        return this.dead;
     }
 
 }

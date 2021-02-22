@@ -51,6 +51,7 @@ public class TamagochiTest {
     }
 
     //TODO Realizar test de limitar puntuación por ejemplo: si llega a 100, que no sume más!
+
     //TODO Realizar test de vida hasta 0 y ver si esta muerto o no.
 
     //todo Comprobar la resurrección del tamagochi Con new ya se revive pero hay que hacer mas!

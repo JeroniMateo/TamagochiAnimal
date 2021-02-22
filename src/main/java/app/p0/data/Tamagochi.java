@@ -15,11 +15,11 @@ public class Tamagochi extends LifeBeing implements IActions {
         this.tamaGender = tamaGender;
     }
 
+    /*Probabilidad en el enum para el genero
+     https://www.lawebdelprogramador.com/foros/Java/1199856-Programa-de-probabilidad-de-java.html
+     50% de probabilidades de que nuestro Tamagochi sea macho o Female...
+      */
     public Tamagochi() {
-        /*Probabilidad en el enum para el genero
-        https://www.lawebdelprogramador.com/foros/Java/1199856-Programa-de-probabilidad-de-java.html
-        50% de probabilidades de que nuestro Tamagochi sea macho o Female...
-         */
 
         if (Math.random()<0.5){
             this.tamaGender=TamaGender.FEMALE;
@@ -67,6 +67,8 @@ public class Tamagochi extends LifeBeing implements IActions {
     //nos devolverá todas las acciones en un array!
     public Actions[] getCurrentActions() {
         return Actions.values();
+
     }
+
 
 }
